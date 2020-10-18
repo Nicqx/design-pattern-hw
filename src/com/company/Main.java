@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Vector;
 
 public class Main {
 
@@ -39,6 +40,23 @@ public class Main {
         System.out.println("Performing the push() with an element 95");
         linkedListAdapter.push(95);
         System.out.println("List after the push: " + linkedList);
+
+        System.out.println("--------------------\n");
+        System.out.println("2.3 Vector List\n");
+        Vector<Integer> vector = new Vector<>();
+        vector.add(10);
+        vector.add(9);
+        vector.add(23);
+
+        System.out.println("Original list:" + vector);
+
+        VectorAdapter vectorAdapter = new VectorAdapter(vector);
+
+        System.out.println("Performing the pop(): " + vectorAdapter.pop());
+        System.out.println("List after the pop:" + vector);
+        System.out.println("Performing the push() with an element 95");
+        vectorAdapter.push(95);
+        System.out.println("List after the push: " + vector);
 
         System.out.println("--------------------\n");
 
