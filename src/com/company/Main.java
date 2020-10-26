@@ -4,6 +4,7 @@ import com.company.adapter.ArrayListAdapter;
 import com.company.adapter.LinkedListAdapter;
 import com.company.adapter.StackAdapter;
 import com.company.adapter.VectorAdapter;
+import com.company.observer.*;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -14,11 +15,31 @@ public class Main {
 
     public static void main(String[] args) {
         performAdapter();
+        performObserver();
 
 
     }
 
-    private static void performAdapter(){
+    private static void performObserver() {
+        System.out.println("3. Observer Task\n");
+        FileOpener fileOpener = new FileOpener();
+
+        String testFile = "./src/com/company/observer/testFiles/test.txt";
+        fileOpener.events.subscribe("word counter", new WordCounterListener(testFile));
+        fileOpener.events.subscribe("number counter", new NumberCounterListener(testFile));
+        fileOpener.events.subscribe("longest word", new LongestWordKeeperListener(testFile));
+        fileOpener.events.subscribe("reverse word", new ReverseWordListener(testFile));
+
+        System.out.println("3.1 First file: " + testFile);
+        fileOpener.openFile(testFile);
+
+        testFile = "./src/com/company/observer/testFiles/test2.txt";
+
+        System.out.println("\n3.2 Second file: " + testFile);
+        fileOpener.openFile(testFile);
+    }
+
+    private static void performAdapter() {
         System.out.println("2. Adapter Task\n");
         System.out.println("2.1 Array List\n");
         ArrayList<Integer> arrayList = new ArrayList<>();
