@@ -1,5 +1,10 @@
 package com.company;
 
+import com.company.adapter.ArrayListAdapter;
+import com.company.adapter.LinkedListAdapter;
+import com.company.adapter.StackAdapter;
+import com.company.adapter.VectorAdapter;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
@@ -8,6 +13,12 @@ import java.util.Vector;
 public class Main {
 
     public static void main(String[] args) {
+        performAdapter();
+
+
+    }
+
+    private static void performAdapter(){
         System.out.println("2. Adapter Task\n");
         System.out.println("2.1 Array List\n");
         ArrayList<Integer> arrayList = new ArrayList<>();
@@ -77,6 +88,5 @@ public class Main {
         System.out.println("List after the push: " + stack);
 
         System.out.println("--------------------\n");
-
     }
 }
