@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 public class NumberCounterListener implements EventListener {
 
+    public static final String NUMBER_PATTERN = "[-+]?([\\d]*\\.[\\d]+|[\\d]+)";
+
     @Override
     public void update(String eventType, File file) {
         try {
@@ -15,7 +17,7 @@ public class NumberCounterListener implements EventListener {
                 String line = scanner.nextLine();
                 String[] words = line.split(" ");
                 for (String word : words) {
-                    if (word.matches("-?\\d+")) {
+                    if (word.matches(NUMBER_PATTERN)) {
                         overallCount++;
                     }
                 }
