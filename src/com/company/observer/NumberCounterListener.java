@@ -10,7 +10,7 @@ public class NumberCounterListener implements EventListener {
 
     @Override
     public void update(String eventType, File file) {
-        try (Scanner scanner = new Scanner(file)){
+        try (Scanner scanner = new Scanner(file)) {
             int overallCount = 0;
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();

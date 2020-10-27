@@ -10,7 +10,7 @@ public class LongestWordKeeperListener implements EventListener {
     public void update(String eventType, File file) {
         String localLongestWord = "";
         int localLongestCount = 0;
-        try (Scanner scanner = new Scanner(file)){
+        try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] words = line.split(" ");
