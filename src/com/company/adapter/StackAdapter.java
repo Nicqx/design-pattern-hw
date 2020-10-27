@@ -2,8 +2,8 @@ package com.company.adapter;
 
 import java.util.Stack;
 
-public class StackAdapter extends Stack<Integer> {
-    private Stack<Integer> stack;
+public class StackAdapter extends Stack<Integer> implements AdapterInterface {
+    private final Stack<Integer> stack;
 
     public StackAdapter(Stack<Integer> stack) {
         this.stack = stack;

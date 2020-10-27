@@ -2,17 +2,16 @@ package com.company.adapter;
 
 import java.util.ArrayList;
 
-public class ArrayListAdapter extends ArrayList<Integer> {
-    private ArrayList<Integer> arrayList;
+public class ArrayListAdapter extends ArrayList<Integer> implements AdapterInterface{
+    private final ArrayList<Integer> arrayList;
 
     public ArrayListAdapter(ArrayList<Integer> arrayList) {
         this.arrayList = arrayList;
     }
 
-    public int pop() {
-        int result = arrayList.get(arrayList.size() - 1);
-        arrayList.remove(arrayList.size() - 1);
-        return result;
+    public Integer pop() {
+
+        return arrayList.remove(arrayList.size() - 1);
     }
 
     public void push(int element) {
