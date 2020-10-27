@@ -2,17 +2,16 @@ package com.company.observer;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class EventManager {
-    Map<String, List<EventListener>> listeners = new HashMap<>();
+    Map<String, List<EventListener>> listeners;
 
     public EventManager(String... operations) {
-        for (String operation : operations) {
-            this.listeners.put(operation, new ArrayList<>());
-        }
+        listeners = Arrays.stream(operations).collect(Collectors.toMap(s -> s, s -> new ArrayList<>()));
     }
 
     public void subscribe(String eventType, EventListener listener) {
