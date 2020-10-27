@@ -5,11 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class WordCounterListener implements EventListener {
-    private File file;
 
-    public WordCounterListener(String fileName) {
-        this.file = new File(fileName);
-    }
 
     @Override
     public void update(String eventType, File file) {

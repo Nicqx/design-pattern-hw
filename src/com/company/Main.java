@@ -25,10 +25,10 @@ public class Main {
         FileOpener fileOpener = new FileOpener();
 
         String testFile = "./src/com/company/observer/testFiles/test.txt";
-        fileOpener.events.subscribe("word counter", new WordCounterListener(testFile));
-        fileOpener.events.subscribe("number counter", new NumberCounterListener(testFile));
-        fileOpener.events.subscribe("longest word", new LongestWordKeeperListener(testFile));
-        fileOpener.events.subscribe("reverse word", new ReverseWordListener(testFile));
+        fileOpener.events.subscribe("word counter", new WordCounterListener());
+        fileOpener.events.subscribe("number counter", new NumberCounterListener());
+        fileOpener.events.subscribe("longest word", new LongestWordKeeperListener());
+        fileOpener.events.subscribe("reverse word", new ReverseWordListener());
 
         System.out.println("3.1 First file: " + testFile);
         fileOpener.openFile(testFile);

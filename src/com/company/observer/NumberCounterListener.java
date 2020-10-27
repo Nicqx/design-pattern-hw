@@ -5,11 +5,6 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class NumberCounterListener implements EventListener {
-    private File file;
-
-    public NumberCounterListener(String fileName) {
-        this.file = new File(fileName);
-    }
 
     @Override
     public void update(String eventType, File file) {

@@ -5,13 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class LongestWordKeeperListener implements EventListener {
-    private File file;
     private int globalLongestCount;
     private String globalLongestWord;
-
-    public LongestWordKeeperListener(String fileName) {
-        this.file = new File(fileName);
-    }
 
     @Override
     public void update(String eventType, File file) {

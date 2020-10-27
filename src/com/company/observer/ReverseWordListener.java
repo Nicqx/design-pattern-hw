@@ -5,11 +5,6 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class ReverseWordListener implements EventListener {
-    private File file;
-
-    public ReverseWordListener(String fileName) {
-        this.file = new File(fileName);
-    }
 
     @Override
     public void update(String eventType, File file) {
