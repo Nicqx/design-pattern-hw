@@ -5,6 +5,7 @@ import com.company.adapter.LinkedListAdapter;
 import com.company.adapter.StackAdapter;
 import com.company.adapter.VectorAdapter;
 import com.company.observer.*;
+import com.company.singleton.Superman;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -16,7 +17,22 @@ public class Main {
     public static void main(String[] args) {
         performAdapter();
         performObserver();
+        performSingleton();
 
+
+    }
+
+    private static void performSingleton() {
+        System.out.println("\n8. Singleton Task\n");
+
+        System.out.println("Instantiate Superman");
+        Superman superman = Superman.getInstance("I am Superman!");
+
+        System.out.println("Try to instantiate decoy Superman");
+        Superman decoySuperman = Superman.getInstance("I am Batman!");
+
+        System.out.println("Ask the first: " + superman.say);
+        System.out.println("Then ask the second: " + decoySuperman.say);
 
     }
 
