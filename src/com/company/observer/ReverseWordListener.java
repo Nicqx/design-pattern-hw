@@ -16,10 +16,10 @@ public class ReverseWordListener implements EventListener {
                 String line = scanner.nextLine();
                 String[] words = line.split(" ");
                 for (String word : words) {
-                    StringBuilder sb = new StringBuilder();
-                    sb.append(word);
-                    sb = sb.reverse();
-                    System.out.print(sb + " ");
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.append(word);
+                    stringBuilder = stringBuilder.reverse();
+                    System.out.print(stringBuilder + " ");
                 }
                 System.out.println();
             }
