@@ -10,9 +10,8 @@ public class NumberCounterListener implements EventListener {
 
     @Override
     public void update(String eventType, File file) {
-        try {
+        try (Scanner scanner = new Scanner(file)){
             int overallCount = 0;
-            Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
                 String[] words = line.split(" ");
@@ -22,7 +21,6 @@ public class NumberCounterListener implements EventListener {
                     }
                 }
             }
-            scanner.close();
             System.out.println("The number of numbers: " + overallCount + " in this file: " + file.getName());
         } catch (FileNotFoundException e) {
             e.printStackTrace();

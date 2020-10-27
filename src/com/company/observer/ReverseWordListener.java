@@ -8,9 +8,8 @@ public class ReverseWordListener implements EventListener {
 
     @Override
     public void update(String eventType, File file) {
-        try {
+        try (Scanner scanner = new Scanner(file)){
             System.out.println("The reverse order of words in this file: " + file.getName() + "\n");
-            Scanner scanner = new Scanner(file);
             while (scanner.hasNextLine()) {
                 System.out.print("> ");
                 String line = scanner.nextLine();
@@ -23,7 +22,6 @@ public class ReverseWordListener implements EventListener {
                 }
                 System.out.println();
             }
-            scanner.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
