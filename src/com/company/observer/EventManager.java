@@ -20,11 +20,6 @@ public class EventManager {
         users.add(listener);
     }
 
-    public void unsubscribe(String eventType, EventListener listener) {
-        List<EventListener> users = listeners.get(eventType);
-        users.remove(listener);
-    }
-
     public void notify(String eventType, File file) {
         List<EventListener> users = listeners.get(eventType);
         for (EventListener listener : users) {
