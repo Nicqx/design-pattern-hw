@@ -10,8 +10,8 @@ import java.util.stream.Collectors;
 public class EventManager {
     Map<String, List<EventListener>> listeners;
 
-    public EventManager(String... operations) {
-        listeners = Arrays.stream(operations).collect(Collectors.toMap(operation -> operation, operation -> new ArrayList<>()));
+    public EventManager(String... listeners) {
+        this.listeners = Arrays.stream(listeners).collect(Collectors.toMap(listener -> listener, listener -> new ArrayList<>()));
     }
 
     public void subscribe(String eventType, EventListener listener) {
