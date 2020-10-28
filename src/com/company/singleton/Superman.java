@@ -8,7 +8,7 @@ public class Superman {
         this.say = say;
     }
 
-    public static Superman getInstance(String say) {
+    public static synchronized Superman getInstance(String say) {
         if (instance == null) {
             instance = new Superman(say);
         }
