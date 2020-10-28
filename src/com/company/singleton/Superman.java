@@ -11,7 +11,9 @@ public class Superman {
     public static Superman getInstance(String say) {
         if (instance == null) {
             synchronized (Superman.class) {
-                instance = new Superman(say);
+                if (instance == null) {
+                    instance = new Superman(say);
+                }
             }
         }
         return instance;
