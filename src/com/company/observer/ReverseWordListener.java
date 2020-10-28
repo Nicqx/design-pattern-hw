@@ -15,8 +15,7 @@ public class ReverseWordListener implements EventListener {
                 String line = scanner.nextLine();
                 String[] words = line.split(" ");
                 for (String word : words) {
-                    StringBuilder stringBuilder = new StringBuilder();
-                    stringBuilder.append(word);
+                    StringBuilder stringBuilder = new StringBuilder(word);
                     stringBuilder = stringBuilder.reverse();
                     System.out.print(stringBuilder + " ");
                 }
