@@ -11,7 +11,7 @@ public class EventManager {
     Map<String, List<EventListener>> listeners;
 
     public EventManager(String... operations) {
-        listeners = Arrays.stream(operations).collect(Collectors.toMap(s -> s, s -> new ArrayList<>()));
+        listeners = Arrays.stream(operations).collect(Collectors.toMap(operation -> operation, operation -> new ArrayList<>()));
     }
 
     public void subscribe(String eventType, EventListener listener) {
