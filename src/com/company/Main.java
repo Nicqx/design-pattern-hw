@@ -4,6 +4,8 @@ import com.company.adapter.ArrayListAdapter;
 import com.company.adapter.LinkedListAdapter;
 import com.company.adapter.StackAdapter;
 import com.company.adapter.VectorAdapter;
+import com.company.builder.House;
+import com.company.factory.HouseFactory;
 import com.company.observer.*;
 import com.company.singleton.Superman;
 
@@ -18,7 +20,36 @@ public class Main {
         performAdapter();
         performObserver();
         performSingleton();
+        performBuilder();
+        performFactory();
+    }
 
+    private static void performFactory() {
+        System.out.println("\nxx. Factory Task\n");
+        System.out.println("Creating smallHouse");
+        com.company.factory.House smallHouse = HouseFactory.getHouse(5);
+        System.out.println("Creating bigHouse");
+        com.company.factory.House bigHouse = HouseFactory.getHouse(12);
+        System.out.println();
+        System.out.println("small house: " + smallHouse.toString());
+        System.out.println("big house: " + bigHouse.toString());
+    }
+
+    private static void performBuilder() {
+        System.out.println("\nx. Builder Task\n");
+
+        System.out.println("Creating smallHouse with garden");
+        House smallHouse = new House.HouseBuilder("green", 2).beGardenExist(true).build();
+        System.out.println("Creating bigHouse without garden");
+        House bigHouse = new House.HouseBuilder("blue", 3).build();
+        System.out.println();
+        System.out.println("smallHouse windows: " + smallHouse.getWindowCount());
+        System.out.println("smallHouse wall's colour: " + smallHouse.getWallColour());
+        System.out.println("smallHouse garden: " + smallHouse.getGardenExisit());
+        System.out.println();
+        System.out.println("bigHouse windows: " + bigHouse.getWindowCount());
+        System.out.println("bigHouse wall's colour: " + bigHouse.getWallColour());
+        System.out.println("bigHouse garden: " + bigHouse.getGardenExisit());
 
     }
 
